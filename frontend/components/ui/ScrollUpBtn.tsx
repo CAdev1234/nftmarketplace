@@ -22,7 +22,7 @@ const ScrollUpBtn:FC = () => {
         }
         window.addEventListener('scroll', () => scrollHandler())
         return window.removeEventListener('scroll', scrollHandler)
-    }, [])
+    }, [enableScrollUpBtn])
 
     return (
         <div className={`fixed z-10 flex items-center justify-center rounded-full cursor-pointer shadow-xl text-white font-semibold bg-transparent ${enableScrollUpBtn === false ? 'hidden' : 'block'}
@@ -37,4 +37,4 @@ const ScrollUpBtn:FC = () => {
     )
 }
 
-export default React.memo(ScrollUpBtn)
+export default ScrollUpBtn

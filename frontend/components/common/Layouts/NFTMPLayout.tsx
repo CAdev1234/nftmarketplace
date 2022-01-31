@@ -2,7 +2,6 @@ import { useState, useEffect, FC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import SearchInput from "@components/ui/SearchInput"
-import SiteLayout from "./SiteLayout"
 const NFTMPLayout:FC = ({ children }) => {
     let navItems = [
         {title: 'Explore', link: '/nftmpsite/explore'},
@@ -15,7 +14,7 @@ const NFTMPLayout:FC = ({ children }) => {
     ]
     const router = useRouter()
     return (
-        <SiteLayout>
+        <>
             <div className="px-10 mt-5 w-full flex items-center text-black dark:text-white">
                 <div className='w-full flex items-center gap-x-5'>
                     <SearchInput />
@@ -29,7 +28,7 @@ const NFTMPLayout:FC = ({ children }) => {
                 </div>
             </div>
             {children}
-        </SiteLayout>
+        </>
     )
 }
 

@@ -10,6 +10,8 @@ import {
     MultiTypeImg
 } from '@components/icon/IconImage'
 import GradientBtn from "@components/ui/GradientBtn";
+import { useAuth } from '@components/contexts/AuthContext'
+import { useTheme } from '@components/contexts/ThemeContext'
 
 
 type StateType = {
@@ -58,6 +60,8 @@ const NFTCreatePage:FC = () => {
         enableChooseType: false,        
     }
     const [state, dispatch] = useReducer(reducer, initialState)
+    const {chainId, address, logined, login} = useAuth()
+    const { theme } = useTheme()
     return <>
         <NFTMPLayout>
             {/* choose blockchain part */}
@@ -66,15 +70,14 @@ const NFTCreatePage:FC = () => {
                 <p className=" mt-5 text-xl text-center">Choose the most suitable blockchain for your needs. <br />You need to sign in for creation</p>
                 <div className="grid grid-cols-3 gap-x-10 mt-10">
                     {coin_list.map((item, idx) => {
-                        return <div key={`cointype_${idx}`} className="relative flex flex-col py-20 px-5 gap-y-10 w-full bg-white shadow-lg dark:bg-slate-700 bg-opacity-50 backdrop-blur-sm rounded-lg">
+                        return <div key={`cointype_${idx}`} className="flex flex-col py-20 px-5 gap-y-10 w-full bg-white shadow-lg dark:bg-slate-700 bg-opacity-50 backdrop-blur-sm rounded-lg">
                             <div className="mx-auto flex flex-col justify-center w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full p-2">
                                 {item.icon}
                             </div>
                             <span className="text-center text-3xl font-bold">{item.title}</span>
                             <div className="flex flex-col mx-auto justify-center">
-                                <GradientBtn onClick={() => { }} txt='Create' />
+                                <GradientBtn onClick={() => {}} txt={`${chainId === item.chainId ? 'Create' : 'Sign In'}`} />
                             </div>
-                            <span className='absolute top-4 right-4 bg-gray-500 w-10 h-10 rounded-full'>Sign In</span>
                         </div>
                     })}
                 </div>

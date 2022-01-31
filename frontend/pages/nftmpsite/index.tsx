@@ -21,7 +21,6 @@ import {
 import MyKeenSlider from '@components/ui/KeenSlider';
 import GradientBtn from '@components/ui/GradientBtn';
 import MyImage from '@components/ui/MyImage';
-import SiteLayout from '@components/common/Layouts/SiteLayout';
 
 
 const NFTMPSite = () => {
@@ -76,6 +75,7 @@ const NFTMPSite = () => {
     ]
 
     return (
+        <>
         <NFTMPLayout>
             <div className="flex flex-col text-black dark:text-white">
 
@@ -171,13 +171,9 @@ const NFTMPSite = () => {
                     </div>
                 </div>
             </div>
-        </NFTMPLayout>
+            </NFTMPLayout>
+        </>
     )
 }
-// NFTMPSite.layout = NFTMPLayout
-// NFTMPSite.getLayout = function getLayout(page) {
-//     return (
-//         <NFTMPLayout>{page}</NFTMPLayout>
-//     )
-// }
+
 export default NFTMPSite

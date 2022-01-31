@@ -4,11 +4,9 @@ import SiteLayout from '@components/common/Layouts/SiteLayout'
 
 export default function ChartSite() {
     return (
-        <SiteLayout>
-            <ChartLayout>
-                <div className='text-white'>Chart Page</div>
-            </ChartLayout>
-        </SiteLayout>
+        <ChartLayout>
+            <div className='text-white'>Chart Page</div>
+        </ChartLayout>
     )
 }
 

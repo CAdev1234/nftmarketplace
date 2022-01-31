@@ -1,0 +1,1 @@
+export const LS_ACCOUNT_KEY = 'account'
