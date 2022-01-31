@@ -30,7 +30,7 @@ import saleImg from "@assets/img/sale.png"
 
 import SingleTypeImg from "@assets/img/single_type.png"
 import MultiTypeImg from "@assets/img/multi_type.png"
-
+import FixedPriceSvg from './FixedPriceSvg'
 
 import {
     BsTwitter,
@@ -63,7 +63,8 @@ import {
     BsGenderFemale,
     BsFullscreen,
     BsPeopleFill,
-    BsCheck2
+    BsCheck2,
+    BsPencilFill,
 } from 'react-icons/bs'
 
 import {
@@ -76,6 +77,8 @@ import {
     FaRegThumbsDown,
     FaIndent,
     FaOutdent,
+    FaUpload,
+    FaInfinity,
 } from 'react-icons/fa'
 
 
@@ -86,7 +89,8 @@ import {
     MdThumbDownOffAlt,
     MdThumbUpOffAlt,
     MdRefresh,
-    MdQuestionAnswer
+    MdQuestionAnswer,
+    MdTimelapse
 } from 'react-icons/md'
 
 
@@ -126,6 +130,7 @@ export {
     saleImg,
     SingleTypeImg,
     MultiTypeImg,
+    FixedPriceSvg,
     
     BsTwitter,
     BsInstagram,
@@ -158,6 +163,7 @@ export {
     BsFullscreen,
     BsPeopleFill,
     BsCheck2,
+    BsPencilFill,
 
 
     FaDiscord,
@@ -169,6 +175,8 @@ export {
     FaRegThumbsDown,
     FaIndent,
     FaOutdent,
+    FaUpload,
+    FaInfinity,
 
     MdSend,
     MdThumbUpAlt,
@@ -177,6 +185,7 @@ export {
     MdThumbUpOffAlt,
     MdRefresh,
     MdQuestionAnswer,
+    MdTimelapse,
 
     
     IoTrendingDownSharp,

@@ -3,21 +3,21 @@ import { createContext, FC, useContext, useEffect, useState } from 'react'
 
 
 interface AuthContextType {
-    logined: boolean,
-    address: string,
-    chainId: number,
-    provider: any,
-    login: (address: string, chainId: number, provider: any) => void,
+    authLogined: boolean,
+    authAddress: string,
+    authChainId: number,
+    authProvider: any,
+    authLogin: (address: string, chainId: number, provider: any) => void,
     // login: () => void,
-    logout: () => void
+    authLogout: () => void
 }
 const authDefaultContext: AuthContextType = {
-    logined: false,
-    address: '',
-    chainId: -1,
-    provider: null,
-    login: () => {},
-    logout: () => {}
+    authLogined: false,
+    authAddress: '',
+    authChainId: -1,
+    authProvider: null,
+    authLogin: () => {},
+    authLogout: () => {}
 }
 
 const AuthContext = createContext<AuthContextType>(authDefaultContext)
@@ -27,30 +27,30 @@ export function useAuth() {
 }
 
 export const AuthProvider:FC = ({children}) => {
-    const [logined, setLogined] = useState(false)
-    const [address, setAddress] = useState('')
-    const [chainId, setChainId] = useState(-1)
-    const [provider, setProvider] = useState(null)
-    const login = (address: string, chainId: number, provider: any) => {
-        setLogined(true)
-        setAddress(address)
-        setChainId(chainId)
-        setProvider(provider)
-        window.localStorage.setItem(LS_ACCOUNT_KEY, JSON.stringify({address: address, chainId: chainId, logined: logined}))
+    const [authLogined, setAuthLogined] = useState(false)
+    const [authAddress, setAuthAddress] = useState('')
+    const [authChainId, setAuthChainId] = useState(-1)
+    const [authProvider, setAuthProvider] = useState(null)
+    const authLogin = (address: string, chainId: number, provider: any) => {
+        setAuthLogined(true)
+        setAuthAddress(address)
+        setAuthChainId(chainId)
+        setAuthProvider(provider)
+        window.localStorage.setItem(LS_ACCOUNT_KEY, JSON.stringify({authAddress: address, authChainId: chainId, authLogined: true}))
     }
-    const logout = () => {
-        setLogined(false)
-        setAddress('')
-        setChainId(-1)
-        setProvider(null)
+    const authLogout = () => {
+        setAuthLogined(false)
+        setAuthAddress('')
+        setAuthChainId(-1)
+        setAuthProvider(null)
     }
     const value = {
-        logined,
-        address,
-        chainId,
-        provider,
-        login,
-        logout
+        authLogined,
+        authAddress,
+        authChainId,
+        authProvider,
+        authLogin,
+        authLogout
     }
 
     useEffect(() => {
@@ -58,9 +58,9 @@ export const AuthProvider:FC = ({children}) => {
         if (defaultVal) {
             defaultVal = JSON.parse(defaultVal)
             console.log(defaultVal)
-            setLogined(true)
-            setAddress(defaultVal?.address)
-            setChainId(defaultVal?.chainId)
+            setAuthLogined(defaultVal?.authLogined)
+            setAuthAddress(defaultVal?.authAddress)
+            setAuthChainId(defaultVal?.authChainId)
         }
     }, [])
     return (

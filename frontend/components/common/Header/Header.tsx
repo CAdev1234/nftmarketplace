@@ -18,6 +18,7 @@ import ThemeToggle from "@components/ui/ThemeToggle/ThemeToggle"
 import ScrollUpBtn from "@components/ui/ScrollUpBtn"
 import GradientBtn from "@components/ui/GradientBtn"
 import { useAuth } from '@components/contexts/AuthContext'
+import { OmitAddress } from "@components/utils/OmitAddress";
 
 const INFURA_ID = '460f40a260564ac4a4f4b3fffb032dad'
 
@@ -161,7 +162,7 @@ const Header : FC = () => {
 
     const router = useRouter()
     const { theme } = useTheme()
-    const { logined, login, logout } = useAuth()
+    const { authLogined, authLogin, authLogout, authAddress } = useAuth()
     const [state, dispatch] = useReducer(reducer, initialState)
     const { language, currency, provider, web3Provider, address, chainId } = state
 
@@ -202,7 +203,7 @@ const Header : FC = () => {
                 address,
                 chainId: network.chainId,
             })
-            login(address, network.chainId, provider)
+            authLogin(address, network.chainId, provider)
             console.log(web3Provider)
             
             
@@ -357,7 +358,7 @@ const Header : FC = () => {
                         <div className="block sm:hidden pl-4">
                             <Logo color={`${!theme ? '#0fc9f2' : '#1564c0'}`} className="" />
                         </div>
-                        <GradientBtn onClick={() => { connectWalletHandler() }} txt={address ? address : 'Connect Wallet'} />
+                        <GradientBtn onClick={() => { connectWalletHandler() }} txt={authAddress ? OmitAddress(authAddress) : 'Connect Wallet'} />
                     </div>
                 </div>
             </div>

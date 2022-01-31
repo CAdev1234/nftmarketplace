@@ -80,7 +80,7 @@ const NFTMPSite = () => {
             <div className="flex flex-col text-black dark:text-white">
 
                 <div className="flex flex-col mt-12 px-10">
-                    <span className='text-center text-4xl font-bold text-white dark:text-dark_18e9d9'>Categories</span>
+                    <span className='title-4xl text-center'>Categories</span>
                     <div className="grid grid-cols-3 gap-4 mt-10">
                         {categories.map((item, idx) => {
                             return <div key={`category_${idx}`} className="relative w-full aspect-video cursor-pointer">
@@ -92,7 +92,7 @@ const NFTMPSite = () => {
                 </div>
 
                 <div className='flex flex-col mt-10 pt-5 px-10 gap-y-10'>
-                    <span className='text-center text-4xl font-bold text-white dark:text-dark_18e9d9'>How To Create And Sell Your NFTs</span>
+                    <span className='title-4xl text-center'>How To Create And Sell Your NFTs</span>
                     <div className='grid grid-cols-4 gap-x-10'>
                         {how_li.map((item, idx) => {
                             return <div key={`how_to_${idx}`} className="flex flex-col gap-y-5 bg-white shadow-lg dark:bg-slate-700 bg-opacity-50 backdrop-blur-sm p-5 rounded-lg">
@@ -107,26 +107,26 @@ const NFTMPSite = () => {
                 </div>
 
                 <div className='flex flex-col mt-10 pt-5 px-10 gap-y-10'>
-                    <span className='text-center text-4xl font-bold text-white dark:text-dark_18e9d9'>Featured Partnerships</span>
+                    <span className='title-4xl text-center'>Featured Partnerships</span>
                     <span className='text-center text-xl font-bold'>New Partnerships Coming Soon...</span>
                 </div>
 
                 <div className='flex flex-col mt-10 pt-5 px-10 gap-y-10'>
-                    <span className='text-center text-4xl font-bold text-white dark:text-dark_18e9d9'>Top Trending Items</span>
+                    <span className='title-4xl text-center'>Top Trending Items</span>
                     <div>
                         <MyKeenSlider renderEle={topTrendingEle} numView={5} />
                     </div>
                 </div>
 
                 <div className='flex flex-col mt-10 pt-5 px-10 gap-y-10 w-8/12 mx-auto'>
-                    <span className='text-center text-4xl font-bold text-white dark:text-dark_18e9d9'>Collection of The Week</span>
+                    <span className='title-4xl text-center'>Collection of The Week</span>
                     <div className='w-full'>
                         <MyKeenSlider renderEle={collectionWeek} numView={1} />
                     </div>
                 </div>
 
                 <div className='flex flex-col mt-10 pt-5 px-10 gap-y-10'>
-                    <span className='text-center text-4xl font-bold text-white dark:text-dark_18e9d9'>Upcoming Features</span>
+                    <span className='title-4xl text-center'>Upcoming Features</span>
                     <div className='grid grid-cols-3 gap-x-10'>
                         {upcommingFeature.map((item, idx) => {
                             return <div key={`upcomming_${idx}`} className='bg-gradient-to-r from-cyan-500 to-blue-500 w-full flex flex-col rounded-t-2xl px-5'>
@@ -141,7 +141,7 @@ const NFTMPSite = () => {
                 </div>
 
                 <div className='flex flex-col mt-10 pt-5 px-10 gap-y-10 w-full mx-auto'>
-                    <span className='text-center text-4xl font-bold text-white dark:text-dark_18e9d9'>Top Collectors</span>
+                    <span className='title-4xl text-center'>Top Collectors</span>
                     <div className='w-full grid grid-cols-3 gap-5'>
                         {topCollectors.map((item, idx) => {
                             return <div key={`topcollector_${idx}`} className="flex items-center">
@@ -156,7 +156,7 @@ const NFTMPSite = () => {
                 </div>
 
                 <div className='flex flex-col mt-10 pt-5 px-10 gap-y-10'>
-                    <span className='text-center text-4xl font-bold text-white dark:text-dark_18e9d9'>Live Auction</span>
+                    <span className='title-4xl text-center'>Live Auction</span>
                     <div>
                         <MyKeenSlider renderEle={topTrendingEle} numView={5} />
                     </div>
